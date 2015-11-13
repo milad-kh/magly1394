@@ -1,0 +1,67 @@
+<ion-view title="لــیـــست مـــــورد علاقـــــه">
+<ion-nav-buttons side="right">
+  <a class="button button-icon icon ion-ios-glasses-outline"></a>          
+</ion-nav-buttons>
+ <ion-content>
+
+<div class="row" ng-show="!favoritePosts">
+  <div class="col">
+    <button class="button button-block button-assertive yekan icon-right ion-heart-broken"> لیست شما خالی است </button>
+  </div>      
+</div>
+
+<!-- post -->
+<ion-item collection-repeat="post in favoritePosts track by $index" ng-show="favoritePosts" item-render-buffer="8" force-refresh-images="false">
+ <div ng-click="ch(post.ID)">
+    <div class="item item-avatar" style="padding-left:20px;border:0px">
+    <p style="direction:rtl">
+      <i class="icon ion-flag" style="color:lightseagreen"></i>
+      &nbsp;
+    <span class="yekan" style="direction:rtl;;white-space:normal;overflow:visible;font-size:medium;color:black" ng-bind="post.post_title"></span>
+    </p>
+    <p class="yekan" style="direction:rtl">
+      <i class="icon ion-ios-pulse" style="color:lightseagreen"></i>
+      &nbsp;
+      <span ng-repeat="cat in post.catId">
+        {{cat.cat_name}}
+        <span ng-if="!$last"> - </span>
+      </span>
+      </p>
+    </div>
+
+     <div class="item item-thumbnail" style="padding:0px;border:0px"> 
+      <div class="item-cover-mode" style="background-image: url({{post.thumbnail}})"></div>
+     </div> 
+     
+    <div class="item item-body" style="border:0px">
+      <div style="direction:rtl;overflow:hidden;height:60px" class="yekan" ng-bind-html="post.summary">                      
+      </div>
+    </div>
+</div>
+   <div ng-if = "1" class="item tabs tabs-secondary tabs-icon-left" style="border:none">
+    
+    <a class="tab-item" ng-click="sendLike(post.ID)">
+      <i class="icon ion-thumbsup" ng-if="!post.isLike"></i>
+      <i class="icon ion-thumbsup" style="color:green" ng-if="post.isLike"></i>
+    </a>
+  
+    <a class="tab-item" ng-click="goToComment(post.ID)">
+      <i class="icon ion-chatbox"></i>
+    </a>
+
+    <a class="tab-item" ng-click="shareToSocial(post.ID)">
+          <i class="icon ion-android-share-alt" style="color:dodgerblue"></i>
+        </a>
+<a class="tab-item" ng-if="!showSignIn" ng-click="addToFavorite(post.ID)">
+      <i ng-show="post.isFavorite" class="icon ion-ios-heart" style="color:red"></i>
+      <i ng-show="!post.isFavorite" class="icon ion-ios-heart-outline"></i>
+    </a>
+    <a class="tab-item" ng-click="mailArticleToFriend(post.ID)">
+          <i class="icon ion-ios-email-outline"></i>
+        </a>
+   </div> 
+
+</ion-item>
+
+ </ion-content>
+</ion-view>

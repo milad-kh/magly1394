@@ -1,0 +1,83 @@
+<ion-view view-title="post">
+<ion-side-menus>
+  <!-- Center content -->
+  <ion-side-menu-content>
+  <ion-header-bar align-title="center" class="bar-positive">
+    <div class="buttons">
+      <button class="button icon-left ion-home" ng-click="goHome();"></button>
+    </div>
+  </ion-header-bar>
+    <ion-content>
+
+	<div class="list card" style="direction:rtl">
+
+  <div class="item item-avatar">
+    <!-- <img ng-src="{{post.thumbnail}}"> -->
+    <h2 class="yekan">{{post.post_title}}</h2>
+    <p>{{post.post_date}}</p>
+  </div>
+
+  <div class="item item-text-wrap">
+    <img class="full-image" ng-src="{{post.thumbnail}}">
+    <p class="koodak" ng-bind-html="post.post_content">
+    </p>
+    <p>
+      <a href="#" class="subdued">1 Like</a>
+      <a href="#" class="subdued">5 Comments</a>
+    </p>
+  </div>
+  <p>مطالب مرتبط</p>
+  <ion-list style="direction:rtl">
+    <ion-item ng-repeat="item in [1,2,3]" ng-click="displaySinglePost(post.ID)" class="item item-thumbnail-right" href="#">          
+      <!-- the box of POST here -->
+      <img ng-show="true" src="{{post.thumbnail}}">
+
+      <h2  ng-show="true" ng-bind="post.post_title" class="iraniansans"></h2>
+      <p   ng-show="true" ng-bind="post.post_content" class="yekan"></p>
+      <!-- the box of ADS is here  -->
+      <img ng-show="!true" src="img/milad.jpg" />
+
+    </ion-item>
+  </ion-list>
+	<button class="button button-positive yekan" ng-click="showPopup()">
+  ایمیل کردن این مقاله به یک دوست
+</button>
+<!-- <div class="bar bar-header bar-calm" ng-click="shareAnywhere()">
+  <h1 class="title">share to social</h1>
+</div> -->
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" ng-href="" ng-click="likeThisPost()">
+      <i class="icon ion-thumbsup"></i>
+      Like
+    </a>
+    <a class="tab-item" ng-href="" ng-click="goToCommentState()">
+      <i class="icon ion-chatbox"></i>
+      Comment
+    </a>
+    <a class="tab-item" href="#" ng-click="openModal()">
+      <i class="icon ion-share"></i>
+      Share
+    </a>
+    <a class="tab-item" ng-href="" ng-click="addToFavorite()">
+      <i class="icon ion-share"></i>
+      favorite
+    </a>
+  </div>  
+
+</div>
+    </ion-content>
+
+  <!-- <ion-footer-bar align-title="right" class="bar-assertive">
+  
+  <div class="buttons" align="left">
+    <button class="button" ng-click="showScope()">show scope</button>
+  </div>
+  <div class="buttons" align="left">
+    <button class="button" ng-click="showActionsheet()">Magly</button>
+  </div>
+  
+  </ion-footer-bar> -->
+  </ion-side-menu-content>
+  </ion-side-menus>
+  </ion-view>

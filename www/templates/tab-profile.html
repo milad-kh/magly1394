@@ -1,0 +1,103 @@
+<ion-view title="پروفــــایل">
+<ion-nav-buttons side="right">
+  <a class="button button-icon icon ion-ios-person-outline"></a>          
+</ion-nav-buttons>
+  <ion-content>
+
+  <div class="card" style="direction:rtl" ng-if="!showSignIn">
+    <div class="item item-text-wrap yekan">
+      خوش آمدید {{info.display_name}}
+    </div>
+  </div>
+
+  <button ng-if="!showSignIn" class="button button-block button-assertive yekan icon-right ion-android-walk" ng-click="signOut()">
+  خروج از برنامه
+</button>
+<!-- sign in -->
+<div class="list" ng-if="showSignIn">
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label yekan">نام کاربری</span>
+    <input type="text" placeholder="نام کاربری" ng-model="info.username" class="yekan">
+  </label>
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label yekan">کلمه عبور</span>
+    <input type="password" placeholder="کلمه عبور" ng-model="info.password" class="yekan">
+  </label> 
+
+<button class="button button-calm button-block yekan icon-right ion-key" ng-click="signin()">
+  ورود به برنامه 
+</button>
+
+</div>
+
+
+<button class="button button-calm button-block yekan icon-right ion-edit" ng-if="!showSignIn" ng-click="showForgetPassModal()">
+  تعویض کلمه عبور
+</button>
+
+<button ng-if="showSignIn" class="button button-balanced button-block yekan icon-right ion-ios-plus-outline" ng-click="goToSignup()">
+  میخواهــــم ثبت نام کنم
+</button>
+
+<div style="direction:rtl">
+  <div class="item item-text-wrap yekan"> 
+    تعداد پست دریافتی برای بار اول
+    <div class="item range range-positive" style="border:none">
+      <i class="icon ion-ios-minus-empty"></i>
+    <input type="range" name="volume" min="3" max="20" value="3" ng-model="settings.numberOfPostDownloadedFirstTime">
+      <i class="icon ion-ios-plus-empty"></i>
+    </div>
+    <div>{{settings.numberOfPostDownloadedFirstTime}} پست</div>
+  </div>
+
+  <div class="item item-text-wrap yekan">
+    تعداد پست های دریافتی جدید
+    <div class="item range range-positive" style="border:none">
+      <i class="icon ion-ios-minus-empty"></i>
+      <input type="range" name="volume" min="1" max="20" value="1" ng-model="settings.numberOfPostDownloaded">
+      <i class="icon ion-ios-plus-empty"></i>
+    </div>
+    <div>{{settings.numberOfPostDownloaded}} پست</div>
+  </div>
+
+
+  <div class="item item-text-wrap yekan" style="border:none">
+    سرعت اسکرول
+    <div class="item range range-positive" style="border:none">
+      <i class="icon ion-ios-minus-empty"></i>
+   <input type="range" name="volume" min="1" max="6" value="2" ng-model="settings.scrollSpeed">
+      <i class="icon ion-ios-plus-empty"></i>
+    </div>
+    <div>{{settings.scrollSpeed}} برابر</div>
+  </div>
+
+</div>
+
+<ion-list>
+
+  <ion-item class="item-toggle">
+     ویبره هنگام دریافت داده جدید
+     <label class="toggle toggle-calm">
+       <input type="checkbox" ng-model="settings.vibrateWhenNewPostsDownloaded">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </ion-item>
+  
+  <ion-item class="item-toggle">
+     <label class="toggle toggle-energized">
+       <input type="checkbox" ng-model="settings.beepWhenNewPostsDownloaded">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+     صدا هنگام دریافت داده جدید
+  </ion-item>
+
+</ion-list>
+
+  </ion-content>
+</ion-view>

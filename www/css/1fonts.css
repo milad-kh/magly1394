@@ -1,0 +1,15 @@
+/*
+ * 1Fonts v1.4 - Persian Web Fonts.
+ * http://alimd.github.io/1fonts/
+ *
+ * 1Fonts by Ali Mihandoost is licensed under a Creative Commons Attribution 3.0 Unported License.
+ */
+@font-face
+{
+  font-family:'yekan';
+  font-style:normal;
+  font-weight:400;
+  src:url("fonts/yekan.eot");
+  src: url(fonts/Yekan.eot?#iefix) format("embedded-opentype"), url(fonts/Yekan.woff) format("woff"), url(fonts/Yekan.ttf) format("truetype"), url(fonts/Yekan.svg#BYekan) format("svg")
+}
+.yekan{font-family:'B Yekan',yekan,Verdana,Geneva,sans-serif;-webkit-font-smoothing:antialiased}

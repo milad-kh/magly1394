@@ -1,0 +1,127 @@
+.size-full
+{
+	height:auto;
+	width: 100%
+}
+
+.usualPostContainer
+{
+	background-color: steelblue;
+	color: white;
+	overflow: visible;
+}
+
+.usualPostContainerImg
+{
+	background-color: whitesmoke;
+}
+
+.adsPostContainer
+{
+	background-color: cadetblue ;
+	color: white;
+}
+.notOverFlow
+{
+	overflow:visible;
+}
+.popup-body
+{
+	direction: rtl;
+}
+
+/*.header-item
+{
+  right: 20px;
+  font-family: yekan;
+  font-size: initial;
+}*/
+.tab-nav.tabs
+{
+	background-color: beige;
+}
+
+.first {
+    float: left;
+    width: 20%;
+    height: 30%;
+    background-color: red;
+}
+
+.second{
+    float: left;
+    width: 20%;
+    height: 70%;
+    background-color: green;
+}
+
+
+.third{
+    float: right;
+    width: 80%;
+    height: 80%;
+    background-color: blue;
+}
+
+.fourth {
+    float: right;
+    width: 40%;
+    height: 20%;
+    background-color: #DDDDDD;
+}
+
+.last{
+    float: right;
+    width: 40%;
+    height: 20%;
+    background-color: yellow;
+}
+
+.rtl
+{
+	direction: rtl;
+}
+
+.header-item
+{
+	text-align:center!important;
+}
+
+.noborder{
+	border: none;
+}
+
+.logo {
+  display: block;
+  text-indent: -9999px;
+  width: 38px;
+  height: 38px;
+  background: url(../img/logo.svg);
+  background-size: 38px 38px;
+}
+.background-highlight-in-comment
+{
+	background-color: rgba(86, 210, 236, 0.1)
+}
+
+.item-cover-mode {
+    width: 100%;
+    height: 230px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 7px;
+  }
+.category-cover-mode{
+	width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+p{
+	text-align: justify;
+}
+h2{
+	font-family:'B Yekan',yekan,Verdana,Geneva,sans-serif;
+	-webkit-font-smoothing:antialiased
+}
